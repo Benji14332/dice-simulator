@@ -4,6 +4,7 @@ body {
   margin: 0;
   background: url(IMG/升级背景.jpg) no-repeat center center;
   background-size: 100% 280%;
+  overflow-x: hidden;
 }
 
 h1 {
