@@ -177,3 +177,7 @@ li span {
   background-color: black;
   transform: rotateX(90deg) translateZ(-49px);
 }
+
+.inside1, .inside2, .inside3, .inside4, .inside5, .inside6 {
+  z-index: -1;
+}
