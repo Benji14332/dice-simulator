@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   min-height: 100%;
   height: auto;
   margin: 0;
@@ -38,7 +39,7 @@ h1 {
   height: 100px;
   transform-style: preserve-3d;
   transform: rotateX(-30deg) rotateY(30deg);
-  animation-duration: 2.5s;
+  animation-duration: 1.5s;
   animation-fill-mode: forwards;
   margin-top: -100px;
 }
@@ -93,11 +94,9 @@ h1 {
   }
 
   100% {
-    transform: rotateY(var(--angle1)) rotateX(var(---angle1));/* 540deg:Y,X*/
+    transform: rotateY(var(--angle1)) rotateX(var(---angle1)); /* 540deg:Y,X*/
   }
 }
-
-
 
 .roll-animation2 {
   animation-name: roll2;
@@ -109,7 +108,7 @@ h1 {
   }
 
   100% {
-    transform: rotateY(var(--angle2)) rotateX(var(---angle2));/* 270,270 */
+    transform: rotateY(var(--angle2)) rotateX(var(---angle2)); /* 270,270 */
   }
 }
 
@@ -123,7 +122,7 @@ h1 {
   }
 
   100% {
-    transform: rotateY(var(--angle3)) rotateX(var(---angle3));/* 180,450 */
+    transform: rotateY(var(--angle3)) rotateX(var(---angle3)); /* 180,450 */
   }
 }
 
@@ -137,7 +136,7 @@ h1 {
   }
 
   100% {
-    transform: rotateY(var(--angle4)) rotateX(var(---angle4));/* 180,270 */
+    transform: rotateY(var(--angle4)) rotateX(var(---angle4)); /* 180,270 */
   }
 }
 
@@ -151,7 +150,7 @@ h1 {
   }
 
   100% {
-    transform: rotateY(var(--angle5)) rotateX(var(---angle5));/* 450,360 */
+    transform: rotateY(var(--angle5)) rotateX(var(---angle5)); /* 450,360 */
   }
 }
 
@@ -165,11 +164,9 @@ h1 {
   }
 
   100% {
-    transform: rotateY(var(--angle6)) rotateX(var(---angle6));/* 360,180 */
+    transform: rotateY(var(--angle6)) rotateX(var(---angle6)); /* 360,180 */
   }
 }
-
-
 
 button {
   margin-top: -3rem;
@@ -262,6 +259,11 @@ li span {
   transform: rotateX(90deg) translateZ(-49px);
 }
 
-.inside1, .inside2, .inside3, .inside4, .inside5, .inside6 {
+.inside1,
+.inside2,
+.inside3,
+.inside4,
+.inside5,
+.inside6 {
   z-index: -1;
 }
