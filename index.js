@@ -1,10 +1,11 @@
 const butEL = document.getElementById("roll-button")
 const diceEL = document.getElementById("dice")
 const hisEL = document.getElementById("rollhis")
+const reEL = document.getElementById("reset-button")
 const frontEL = document.getElementById("front")
 let hislist = [];
 let isrunning = false;
-
+document.documentElement.style.setProperty('--style', 'none');
 
 butEL.addEventListener("click", () => {
     if (isrunning) {
@@ -44,7 +45,15 @@ function updatehis() {
         }
 
         hisEL.appendChild(listitem);
-        isrunning = false;
+
+        if(hisEL.scrollHeight>hisEL.clientHeight){
+            hisEL.scrollTop=hisEL.scrollHeight-hisEL.clientHeight;
+        }
+        
+        setTimeout(() => {
+            isrunning = false;
+            document.documentElement.style.setProperty('--style', 'flex');
+        }, 800);
 
     }
 }
@@ -90,7 +99,7 @@ function changedice() {
         diceEL.classList.add("roll-animation1")
         setTimeout(() => {
             diceEL.classList.remove("roll-animation1");
-        }, 2000);
+        }, 2600);
     } else if (diceFace == 2) {
         var randomAngley = Math.floor(Math.random() * 6) * 360 + 630;
         var randomAnglex = Math.floor(Math.random() * 6) * 360 + 270 + 360;
@@ -100,7 +109,7 @@ function changedice() {
         diceEL.classList.add("roll-animation2")
         setTimeout(() => {
             diceEL.classList.remove("roll-animation2");
-        }, 2000);
+        }, 2600);
     } else if (diceFace == 3) {
         var randomAngley = Math.floor(Math.random() * 6) * 360 + 180 + 360;
         var randomAnglex = Math.floor(Math.random() * 6) * 360 + 450;
@@ -110,7 +119,7 @@ function changedice() {
         diceEL.classList.add("roll-animation3")
         setTimeout(() => {
             diceEL.classList.remove("roll-animation3");
-        }, 2000);
+        }, 2600);
     } else if (diceFace == 4) {
         var randomAngley = Math.floor(Math.random() * 6) * 360 + 180 + 360;
         var randomAnglex = Math.floor(Math.random() * 6) * 360 + 270 + 360;
@@ -120,7 +129,7 @@ function changedice() {
         diceEL.classList.add("roll-animation4")
         setTimeout(() => {
             diceEL.classList.remove("roll-animation4");
-        }, 2000);
+        }, 2600);
     } else if (diceFace == 5) {
         var randomAngley = Math.floor(Math.random() * 6) * 360 + 450;
         var randomAnglex = Math.floor(Math.random() * 6) * 360 + 360;
@@ -131,7 +140,7 @@ function changedice() {
         diceEL.classList.add("roll-animation5")
         setTimeout(() => {
             diceEL.classList.remove("roll-animation5");
-        }, 2000);
+        }, 2600);
     } else {
         var randomAngley = Math.floor(Math.random() * 6) * 360 + 360;
         var randomAnglex = Math.floor(Math.random() * 6) * 360 + 180 + 360;
@@ -141,13 +150,21 @@ function changedice() {
         diceEL.classList.add("roll-animation6")
         setTimeout(() => {
             diceEL.classList.remove("roll-animation6");
-        }, 2000);
+        }, 2600);
     }
 
     setTimeout(function () {
         hislist.push(rollres);
         updatehis();
-    }, 2000)
+    }, 1800)
 
 
 }
+
+reEL.addEventListener("click", () => {
+    while (hisEL.firstChild) {
+        hisEL.removeChild(hisEL.firstChild);
+        hislist.pop();
+      }
+      document.documentElement.style.setProperty('--style', 'none');
+})
