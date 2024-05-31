@@ -2,13 +2,12 @@ const butEL = document.getElementById("roll-button")
 const diceEL = document.getElementById("dice")
 const hisEL = document.getElementById("rollhis")
 const frontEL = document.getElementById("front")
-const org = diceEL.innerHTML;
 let hislist = [];
 let isrunning = false;
 
 
 butEL.addEventListener("click", () => {
-    if (isrunning || diceEL.innerHTML != org) {
+    if (isrunning) {
         return;
     }
 
@@ -46,7 +45,6 @@ function updatehis() {
 
         hisEL.appendChild(listitem);
         isrunning = false;
-        diceEL.innerHTML = org;
 
     }
 }
