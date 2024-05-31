@@ -3,6 +3,7 @@ body {
   min-height: 100%;
   height: auto;
   margin: 0;
+  overflow: hidden;
 }
 
 body {
@@ -16,8 +17,18 @@ body {
 
 h1 {
   font-size: 3rem;
-  margin-top: 5rem;
-  color: rgb(35, 146, 102);
+  margin-top: 3rem;
+  color: rgb(16, 24, 18);
+}
+
+@keyframes colorswitch{
+  0%{color: rgb(146, 226, 181);}
+  50%{color: rgb(123, 103, 193);}
+  100%{color: rgb(146, 226, 181);}
+}
+
+h2{
+  animation: colorswitch 5s infinite;
 }
 
 .pos {
@@ -41,7 +52,7 @@ h1 {
   transform: rotateX(-30deg) rotateY(30deg);
   animation-duration: 1.5s;
   animation-fill-mode: forwards;
-  margin-top: -100px;
+  margin-top: -80px;
 }
 
 .face {
@@ -168,28 +179,46 @@ h1 {
   }
 }
 
-button {
-  margin-top: -3rem;
+#roll-button {
+  opacity: 0;
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  margin-top: -12rem;
+  margin-left: -4.5rem;
   background-color: rgb(156, 173, 218);
   color: aliceblue;
   font-size: 1.5rem;
   padding: 1rem 2rem;
   border: none;
-  border-radius: 1rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
-button:hover {
+/* button:hover {
   background-color: rgb(103, 134, 201);
+} */
+
+#reset-button{
+  display:var(--style);
+  justify-content: center;
+  margin: 0.8rem auto;
+  width: 150px;
+  height: 45px;
+  border-radius: 10px;
+  font-size: 35px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  
 }
 
 ul {
   list-style: none;
   padding: 0;
   max-width: 600px;
-  margin: 2rem auto;
+  margin: 0rem auto;
+  max-height: 310px;
+  overflow-y: auto;
 }
 
 li {
@@ -205,7 +234,7 @@ li {
 }
 
 li span {
-  color: rgb(39, 143, 100);
+  color: rgb(68, 184, 184);
   font-size: 3rem;
   margin-right: 1rem;
 }
