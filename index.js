@@ -73,55 +73,59 @@ function getdf(rollres) {
 }, 700); */
 
 function changedice() {
+    var d = new Date();
+    var ran1 = d.getSeconds();
+    var ran2 = d.getMinutes();
+    var ran3 = d.getHours();
 
-    const rollres = Math.floor(Math.random() * 6) + 1;
+    const rollres = ((ran1 + ran2) * ran3) % 7;
     /* console.log(rollres); */
     const diceFace = getdf(rollres);
     /* console.log(diceFace); */
 
     if (diceFace == 1) {
-        var randomAngley=Math.floor(Math.random()*6)*360+180;
-        var randomAnglex=Math.floor(Math.random()*6)*360+540;
+        var randomAngley = Math.floor(Math.random() * 6) * 360 + 180 + 360;
+        var randomAnglex = Math.floor(Math.random() * 6) * 360 + 540;
         document.documentElement.style.setProperty('--angle1', randomAngley + 'deg');
         document.documentElement.style.setProperty('---angle1', randomAnglex + 'deg');
 
         diceEL.classList.add("roll-animation1")
         setTimeout(() => {
             diceEL.classList.remove("roll-animation1");
-        }, 3000);
+        }, 2000);
     } else if (diceFace == 2) {
-        var randomAngley=Math.floor(Math.random()*6)*360+630;
-        var randomAnglex=Math.floor(Math.random()*6)*360+270;
+        var randomAngley = Math.floor(Math.random() * 6) * 360 + 630;
+        var randomAnglex = Math.floor(Math.random() * 6) * 360 + 270 + 360;
         document.documentElement.style.setProperty('--angle2', randomAngley + 'deg');
         document.documentElement.style.setProperty('---angle2', randomAnglex + 'deg');
 
         diceEL.classList.add("roll-animation2")
         setTimeout(() => {
             diceEL.classList.remove("roll-animation2");
-        }, 3000);
+        }, 2000);
     } else if (diceFace == 3) {
-        var randomAngley=Math.floor(Math.random()*6)*360+180;
-        var randomAnglex=Math.floor(Math.random()*6)*360+450;
+        var randomAngley = Math.floor(Math.random() * 6) * 360 + 180 + 360;
+        var randomAnglex = Math.floor(Math.random() * 6) * 360 + 450;
         document.documentElement.style.setProperty('--angle3', randomAngley + 'deg');
         document.documentElement.style.setProperty('---angle3', randomAnglex + 'deg');
 
         diceEL.classList.add("roll-animation3")
         setTimeout(() => {
             diceEL.classList.remove("roll-animation3");
-        }, 3000);
+        }, 2000);
     } else if (diceFace == 4) {
-        var randomAngley=Math.floor(Math.random()*6)*360+180;
-        var randomAnglex=Math.floor(Math.random()*6)*360+270;
+        var randomAngley = Math.floor(Math.random() * 6) * 360 + 180 + 360;
+        var randomAnglex = Math.floor(Math.random() * 6) * 360 + 270 + 360;
         document.documentElement.style.setProperty('--angle4', randomAngley + 'deg');
         document.documentElement.style.setProperty('---angle4', randomAnglex + 'deg');
 
         diceEL.classList.add("roll-animation4")
         setTimeout(() => {
             diceEL.classList.remove("roll-animation4");
-        }, 3000);
+        }, 2000);
     } else if (diceFace == 5) {
-        var randomAngley=Math.floor(Math.random()*6)*360+450;
-        var randomAnglex=Math.floor(Math.random()*6)*360+360;
+        var randomAngley = Math.floor(Math.random() * 6) * 360 + 450;
+        var randomAnglex = Math.floor(Math.random() * 6) * 360 + 360;
         document.documentElement.style.setProperty('--angle5', randomAngley + 'deg');
         document.documentElement.style.setProperty('---angle5', randomAnglex + 'deg');
 
@@ -129,23 +133,23 @@ function changedice() {
         diceEL.classList.add("roll-animation5")
         setTimeout(() => {
             diceEL.classList.remove("roll-animation5");
-        }, 3000);
+        }, 2000);
     } else {
-        var randomAngley=Math.floor(Math.random()*6)*360+360;
-        var randomAnglex=Math.floor(Math.random()*6)*360+180;
+        var randomAngley = Math.floor(Math.random() * 6) * 360 + 360;
+        var randomAnglex = Math.floor(Math.random() * 6) * 360 + 180 + 360;
         document.documentElement.style.setProperty('--angle6', randomAngley + 'deg');
         document.documentElement.style.setProperty('---angle6', randomAnglex + 'deg');
 
         diceEL.classList.add("roll-animation6")
         setTimeout(() => {
             diceEL.classList.remove("roll-animation6");
-        }, 3000);
+        }, 2000);
     }
 
     setTimeout(function () {
         hislist.push(rollres);
         updatehis();
-    }, 3000)
+    }, 2000)
 
 
 }
