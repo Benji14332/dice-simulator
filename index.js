@@ -7,7 +7,18 @@ let hislist = [];
 let isrunning = false;
 
 
+butEL.addEventListener("click", () => {
+    if (isrunning || diceEL.innerHTML != org) {
+        return;
+    }
 
+    isrunning = true;
+    /*  console.log("clicked"); */
+
+    changedice();
+
+
+})
 
 function updatehis() {
 
@@ -15,22 +26,22 @@ function updatehis() {
     for (let i = 0; i < hislist.length; i++) {
         const listitem = document.createElement("li");
         if (getdf(hislist[i]) == 1) {
-            listitem.innerHTML = `Roll ${i + 1} Points:<span>${1}</span>`;
+            listitem.innerHTML = `Roll ${i + 1} Points:<span>${"&#9856"}</span>`;
         }
         if (getdf(hislist[i]) == 2) {
-            listitem.innerHTML = `Roll ${i + 1} Points:<span>${2}</span>`;
+            listitem.innerHTML = `Roll ${i + 1} Points:<span>${"&#9857"}</span>`;
         }
         if (getdf(hislist[i]) == 3) {
-            listitem.innerHTML = `Roll ${i + 1} Points:<span>${3}</span>`;
+            listitem.innerHTML = `Roll ${i + 1} Points:<span>${"&#9858"}</span>`;
         }
         if (getdf(hislist[i]) == 4) {
-            listitem.innerHTML = `Roll ${i + 1} Points:<span>${4}</span>`;
+            listitem.innerHTML = `Roll ${i + 1} Points:<span>${"&#9859"}</span>`;
         }
         if (getdf(hislist[i]) == 5) {
-            listitem.innerHTML = `Roll ${i + 1} Points:<span>${5}</span>`;
+            listitem.innerHTML = `Roll ${i + 1} Points:<span>${"&#9860"}</span>`;
         }
         if (getdf(hislist[i]) == 6) {
-            listitem.innerHTML = `Roll ${i + 1} Points:<span>${6}</span>`;
+            listitem.innerHTML = `Roll ${i + 1} Points:<span>${"&#9861"}</span>`;
         }
 
         hisEL.appendChild(listitem);
@@ -57,24 +68,9 @@ function getdf(rollres) {
 
 }
 
-
-
-butEL.addEventListener("click", () => {
-    if (isrunning || diceEL.innerHTML != org) {
-        return;
-    }
-
-    isrunning = true;
-    /*  console.log("clicked"); */
-    diceEL.classList.add("roll-animation");
-    setTimeout(() => {
-
-        diceEL.classList.remove("roll-animation");
-        changedice();
-
-    }, 700);
-
-})
+/* setTimeout(() => {
+    diceEL.classList.remove("roll-animation1");
+}, 700); */
 
 function changedice() {
 
@@ -82,11 +78,74 @@ function changedice() {
     /* console.log(rollres); */
     const diceFace = getdf(rollres);
     /* console.log(diceFace); */
-    diceEL.innerHTML = diceFace;
+
+    if (diceFace == 1) {
+        var randomAngley=Math.floor(Math.random()*6)*360+180;
+        var randomAnglex=Math.floor(Math.random()*6)*360+540;
+        document.documentElement.style.setProperty('--angle1', randomAngley + 'deg');
+        document.documentElement.style.setProperty('---angle1', randomAnglex + 'deg');
+
+        diceEL.classList.add("roll-animation1")
+        setTimeout(() => {
+            diceEL.classList.remove("roll-animation1");
+        }, 3000);
+    } else if (diceFace == 2) {
+        var randomAngley=Math.floor(Math.random()*6)*360+630;
+        var randomAnglex=Math.floor(Math.random()*6)*360+270;
+        document.documentElement.style.setProperty('--angle2', randomAngley + 'deg');
+        document.documentElement.style.setProperty('---angle2', randomAnglex + 'deg');
+
+        diceEL.classList.add("roll-animation2")
+        setTimeout(() => {
+            diceEL.classList.remove("roll-animation2");
+        }, 3000);
+    } else if (diceFace == 3) {
+        var randomAngley=Math.floor(Math.random()*6)*360+180;
+        var randomAnglex=Math.floor(Math.random()*6)*360+450;
+        document.documentElement.style.setProperty('--angle3', randomAngley + 'deg');
+        document.documentElement.style.setProperty('---angle3', randomAnglex + 'deg');
+
+        diceEL.classList.add("roll-animation3")
+        setTimeout(() => {
+            diceEL.classList.remove("roll-animation3");
+        }, 3000);
+    } else if (diceFace == 4) {
+        var randomAngley=Math.floor(Math.random()*6)*360+180;
+        var randomAnglex=Math.floor(Math.random()*6)*360+270;
+        document.documentElement.style.setProperty('--angle4', randomAngley + 'deg');
+        document.documentElement.style.setProperty('---angle4', randomAnglex + 'deg');
+
+        diceEL.classList.add("roll-animation4")
+        setTimeout(() => {
+            diceEL.classList.remove("roll-animation4");
+        }, 3000);
+    } else if (diceFace == 5) {
+        var randomAngley=Math.floor(Math.random()*6)*360+450;
+        var randomAnglex=Math.floor(Math.random()*6)*360+360;
+        document.documentElement.style.setProperty('--angle5', randomAngley + 'deg');
+        document.documentElement.style.setProperty('---angle5', randomAnglex + 'deg');
+
+
+        diceEL.classList.add("roll-animation5")
+        setTimeout(() => {
+            diceEL.classList.remove("roll-animation5");
+        }, 3000);
+    } else {
+        var randomAngley=Math.floor(Math.random()*6)*360+360;
+        var randomAnglex=Math.floor(Math.random()*6)*360+180;
+        document.documentElement.style.setProperty('--angle6', randomAngley + 'deg');
+        document.documentElement.style.setProperty('---angle6', randomAnglex + 'deg');
+
+        diceEL.classList.add("roll-animation6")
+        setTimeout(() => {
+            diceEL.classList.remove("roll-animation6");
+        }, 3000);
+    }
+
     setTimeout(function () {
         hislist.push(rollres);
         updatehis();
-    }, 750)
+    }, 3000)
 
 
 }
