@@ -233,7 +233,7 @@ li {
 }
 
 li span {
-  color: black;
+  /* color: black; */
   font-size: 3rem;
   margin-right: 1rem;
 }
