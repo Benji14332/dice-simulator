@@ -87,11 +87,11 @@ function changedice() {
 
     var rollres = (ran1 * ran1 * Math.floor(Math.random() * ran2)) % 7;
     while (rollres == 0) {
-        rollres = Math.floor(Math.random() * 6);
+        rollres = Math.floor(Math.random() * 6) + 1;
     }
 
     if (prev == rollres) {
-        rollres = (rollres * Math.floor(Math.random() * 6)) % 7;
+        rollres = Math.floor(Math.random() * 6) + 1;
     }
     /* console.log(rollres); */
     const diceFace = getdf(rollres);
