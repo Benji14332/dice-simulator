@@ -48,7 +48,7 @@ h2{
   width: 100px;
   height: 100px;
   transform-style: preserve-3d;
-  transform: rotateX(-30deg) rotateY(30deg);
+  transform: rotateX(150deg) rotateY(60deg) rotateZ(90deg);
   animation-duration: 1.5s;
   animation-fill-mode: forwards;
   margin-top: -80px;
@@ -100,11 +100,11 @@ h2{
 
 @keyframes roll1 {
   0% {
-    transform: rotateY(0deg) rotateX(0deg);
+    transform: rotateX(0deg) rotateZ(0deg);
   }
 
   100% {
-    transform: rotateY(var(--angle1)) rotateX(var(---angle1)); /* 540deg:Y,X*/
+    transform: rotateX(var(--angle1)) rotateZ(var(---angle1)); /* transform: rotateX(60deg) rotateY(0deg) rotateZ(60deg); */
   }
 }
 
@@ -114,12 +114,12 @@ h2{
 
 @keyframes roll2 {
   0% {
-    transform: rotateY(0deg) rotateX(0deg);
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
   }
 
   100% {
-    transform: rotateY(var(--angle2)) rotateX(var(---angle2)); /* 270,270 */
-  }
+    transform: rotateX(var(--angle2)) rotateY(60deg) rotateZ(var(----angle2)); /* transform: rotateX(150deg) rotateY(60deg) rotateZ(90deg);*/
+  } 
 }
 
 .roll-animation3 {
@@ -128,12 +128,12 @@ h2{
 
 @keyframes roll3 {
   0% {
-    transform: rotateY(0deg) rotateX(0deg);
+    transform: rotateX(0deg) rotateY(0deg);
   }
 
   100% {
-    transform: rotateY(var(--angle3)) rotateX(var(---angle3)); /* 180,450 */
-  }
+    transform: rotateX(var(--angle3)) rotateY(var(---angle3)); /* transform: rotateX(-30deg) rotateY(30deg) rotateZ(0deg);*/
+  } 
 }
 
 .roll-animation4 {
@@ -142,12 +142,12 @@ h2{
 
 @keyframes roll4 {
   0% {
-    transform: rotateY(0deg) rotateX(0deg);
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
   }
 
   100% {
-    transform: rotateY(var(--angle4)) rotateX(var(---angle4)); /* 180,270 */
-  }
+    transform: rotateX(var(--angle4)) rotateY(var(---angle4)) rotateZ(180deg); /* transform: rotateX(-30deg) rotateY(30deg) rotateZ(180deg);*/
+  } 
 }
 
 .roll-animation5 {
@@ -156,11 +156,11 @@ h2{
 
 @keyframes roll5 {
   0% {
-    transform: rotateY(0deg) rotateX(0deg);
+    transform: rotateY(0deg) rotateY(0deg) rotateZ(0deg);
   }
 
   100% {
-    transform: rotateY(var(--angle5)) rotateX(var(---angle5)); /* 450,360 */
+    transform: rotateX(var(--angle5)) rotateY(var(---angle5)) rotateZ(90deg); /* transform: rotateX(-30deg) rotateY(30deg) rotateZ(90deg); */
   }
 }
 
@@ -170,11 +170,11 @@ h2{
 
 @keyframes roll6 {
   0% {
-    transform: rotateY(0deg) rotateX(0deg);
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
   }
 
   100% {
-    transform: rotateY(var(--angle6)) rotateX(var(---angle6)); /* 360,180 */
+    transform: rotateX(60deg) rotateY(var(---angle6)) rotateZ(var(----angle6)); /* transform: rotateX(60deg) rotateY(180deg) rotateZ(120deg); */
   }
 }
 
@@ -224,7 +224,7 @@ li {
   font-size: 1.5rem;
   padding: 0.5rem;
   margin: 0.5rem;
-  background-color: #f2f2f2;
+  background-color: #9ee9e6;
   border-radius: 0.5rem;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
   display: flex;
@@ -233,7 +233,7 @@ li {
 }
 
 li span {
-  color: rgb(68, 184, 184);
+  color: black;
   font-size: 3rem;
   margin-right: 1rem;
 }
