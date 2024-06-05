@@ -27,22 +27,22 @@ function updatehis() {
     for (let i = 0; i < hislist.length; i++) {
         const listitem = document.createElement("li");
         if (getdf(hislist[i]) == 1) {
-            listitem.innerHTML = `Roll ${i + 1} Points:<span>${"&#9856"}</span>`;
+            listitem.innerHTML = `Roll ${i + 1} Points:<span style="color: yellow">${"&#9856"}</span>`;
         }
         if (getdf(hislist[i]) == 2) {
-            listitem.innerHTML = `Roll ${i + 1} Points:<span>${"&#9857"}</span>`;
+            listitem.innerHTML = `Roll ${i + 1} Points:<span style="color: orange">${"&#9857"}</span>`;
         }
         if (getdf(hislist[i]) == 3) {
-            listitem.innerHTML = `Roll ${i + 1} Points:<span>${"&#9858"}</span>`;
+            listitem.innerHTML = `Roll ${i + 1} Points:<span style="color: red">${"&#9858"}</span>`;
         }
         if (getdf(hislist[i]) == 4) {
-            listitem.innerHTML = `Roll ${i + 1} Points:<span>${"&#9859"}</span>`;
+            listitem.innerHTML = `Roll ${i + 1} Points:<span style="color: pink">${"&#9859"}</span>`;
         }
         if (getdf(hislist[i]) == 5) {
-            listitem.innerHTML = `Roll ${i + 1} Points:<span>${"&#9860"}</span>`;
+            listitem.innerHTML = `Roll ${i + 1} Points:<span style="color: purple">${"&#9860"}</span>`;
         }
         if (getdf(hislist[i]) == 6) {
-            listitem.innerHTML = `Roll ${i + 1} Points:<span>${"&#9861"}</span>`;
+            listitem.innerHTML = `Roll ${i + 1} Points:<span style="color: blue">${"&#9861"}</span>`;
         }
 
         hisEL.appendChild(listitem);
