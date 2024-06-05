@@ -86,8 +86,12 @@ function changedice() {
     var ran2 = d.getMinutes();
 
     var rollres = (ran1 * ran1 * Math.floor(Math.random() * ran2)) % 7;
+    while (rollres == 0) {
+        rollres = Math.floor(Math.random() * 6);
+    }
+
     if (prev == rollres) {
-        rollres = (rollres * Math.floor(Math.random()*6)) % 7;
+        rollres = (rollres * Math.floor(Math.random() * 6)) % 7;
     }
     /* console.log(rollres); */
     const diceFace = getdf(rollres);
